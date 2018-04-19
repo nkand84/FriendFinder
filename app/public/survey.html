@@ -6,8 +6,10 @@
 
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
 
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -175,7 +177,7 @@
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#results-modal" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
 
@@ -193,7 +195,7 @@
 
     <!-- Modal -->
     <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-md" style="height:150px;">
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -205,8 +207,8 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="https://www.google.com/search?biw=1600&bih=737&tbm=isch&sa=1&ei=g8vWWqzbCIOSjwO5-Z2YCw&q=animation+characters&oq=animation+characters&gs_l=psy-ab.3...9059.11858.0.11990.0.0.0.0.0.0.0.0..0.0....0...1c.1.64.psy-ab..0.0.0....0.30aFMMQlSEs#imgrc=vDvbSlXmJGwX-M:"
-                        alt="">
+                    <img id="match-img" src=""
+                        alt="matched friend" width="70px" height="60px">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -231,7 +233,7 @@
                     parseInt($("#q4").val().trim()),
                     parseInt($("#q5").val().trim()),
                     parseInt($("#q6").val().trim()),
-                    parseInt( $("#q7").val().trim()),
+                    parseInt($("#q7").val().trim()),
                     parseInt($("#q8").val().trim()),
                     parseInt($("#q9").val().trim()),
                     parseInt($("#q10").val().trim())
@@ -240,14 +242,19 @@
             };
 
             // Question: What does this code do??
-            $.post("/api/friends", newFriend)
-                .then(function (data) {
-                    console.log(data);
-                    alert("Adding a friend...");
-                });
+            $.post("/api/friends", newFriend, function (data) {
+                console.log("I am data " + data.friendMatch + ","+ data.friendURL);
+                alert("Adding a friend...");
+                $("#match-name").text(data.friendMatch);
+                $("#match-img").attr("src", data.friendURL);
+               
+
+
+            });
+
             emptyFields();
         });
-//  empty fields after submitting
+        //  empty fields after submitting
         function emptyFields() {
             $("#name").val("");
             $("#photo").val("");
