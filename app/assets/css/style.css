@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
+button{
+    background-color: #f5ce3e !important;
+    color: #fff !important;
+    font-weight:600 !important;
+}
+button:hover{
+    background-color: #edd06a !important;
+    
+}
+body{
+    
+    background-color: #f5ce3e;
+     
+
+                       
+}
