@@ -6,7 +6,7 @@ module.exports = function (app, friends) {
     // =============================================================
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-
+    
     // Displays all friends
     app.get("/api/friends", function (req, res) {
         return res.json(friends);
