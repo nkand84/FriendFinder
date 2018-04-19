@@ -3,8 +3,8 @@ module.exports = function (app) {
 
     var friends = [
         {
-            "name": "Jennifer Aniston",
-            "photo": "https://www.google.com/search?q=jennifer+aniston&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiUlY36hMPaAhVKxlQKHdWNCd4Q_AUICygC&biw=1600&bih=677#imgrc=gVMQzs1cjtXTFM:",
+            "name": "Taylor Swift",
+            "photo": "https://abovethelaw.com/wp-content/uploads/2017/08/taylor-swift.jpg",
             "scores": [
                 5,
                 1,
@@ -19,8 +19,8 @@ module.exports = function (app) {
             ]
         },
         {
-            "name": "Katy Perry",
-            "photo": "https://www.google.com/search?q=pictures+of+celebrities&tbm=isch&source=iu&ictx=1&fir=0F_Vixr8JSU7DM%253A%252Cpb7I80kI6QTMQM%252C_&usg=__GpccS3dnfhUG84EdW85DoRKaATc%3D&sa=X&ved=0ahUKEwjQldzF6sTaAhVV4mMKHXj3BJMQ9QEINTAF#imgrc=duDUasx6PSBS0M:",
+            "name": "Jennifer Aniston",
+            "photo": "http://cdn2.stylecraze.com/wp-content/uploads/2014/01/161-8-Famous-Bob-Hairstyles-Of-Jennifer-Aniston.jpg",
             "scores": [
                 1,
                 5,
@@ -35,8 +35,8 @@ module.exports = function (app) {
             ]
         },
         {
-            "name": "Shakhira",
-            "photo": "https://www.google.com/search?q=pictures+of+celebrities&tbm=isch&source=iu&ictx=1&fir=0F_Vixr8JSU7DM%253A%252Cpb7I80kI6QTMQM%252C_&usg=__GpccS3dnfhUG84EdW85DoRKaATc%3D&sa=X&ved=0ahUKEwjQldzF6sTaAhVV4mMKHXj3BJMQ9QEINTAF#imgrc=XIrz5zc68ptrzM:",
+            "name": "Shakira",
+            "photo": "https://www.billboard.com/files/media/shakira-la-la-la-2016-billboard-1548.jpg",
             "scores": [
                 5,
                 2,
@@ -52,7 +52,7 @@ module.exports = function (app) {
         },
         {
             "name": "Beyonce",
-            "photo": "https://www.google.com/search?q=pictures+of+celebrities&tbm=isch&source=iu&ictx=1&fir=0F_Vixr8JSU7DM%253A%252Cpb7I80kI6QTMQM%252C_&usg=__GpccS3dnfhUG84EdW85DoRKaATc%3D&sa=X&ved=0ahUKEwjQldzF6sTaAhVV4mMKHXj3BJMQ9QEINTAF#imgrc=oPccbyDtkVsMLM:",
+            "photo": "https://fortunedotcom.files.wordpress.com/2016/04/gettyimages-88628374.jpg",
             "scores": [
                 5,
                 2,

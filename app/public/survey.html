@@ -9,7 +9,7 @@
     <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
+
 
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -195,20 +195,19 @@
 
     <!-- Modal -->
     <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-md" style="height:150px;">
+        <div class="modal-dialog modal-md">
 
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h2 class="modal-title">
-                        <strong>Best Match</strong>
+                    <h2 class="modal-title text-center">
+                        <strong>Your Best Buddy!!</strong>
                     </h2>
                 </div>
-                <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" src=""
-                        alt="matched friend" width="70px" height="60px">
+                <div class="modal-body text-center">
+                    <h2 id="match-name" class="text-center"></h2>
+                    <img id="match-img" alt="matched friend" class="text-center" width="300px" height="200px">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -223,7 +222,7 @@
         $("#submit").on("click", function (event) {
             event.preventDefault();
 
-            var newFriend = {
+            var newUser = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
                 scores: [
@@ -242,14 +241,11 @@
             };
 
             // Question: What does this code do??
-            $.post("/api/friends", newFriend, function (data) {
-                console.log("I am data " + data.friendMatch + ","+ data.friendURL);
-                alert("Adding a friend...");
+            $.post("/api/friends", newUser, function (data) {
+                console.log("I am data " + data.friendMatch + "," + data.friendPhoto);
+                // alert("Adding a friend...");
                 $("#match-name").text(data.friendMatch);
-                $("#match-img").attr("src", data.friendURL);
-               
-
-
+                $("#match-img").attr("src", data.friendPhoto);
             });
 
             emptyFields();
@@ -270,9 +266,6 @@
             $("#q10").val("");
         }
     </script>
-
-
-
 
 </body>
 
