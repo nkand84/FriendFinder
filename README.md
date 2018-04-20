@@ -11,20 +11,21 @@
 <li>npm i express body-parser express-static </li>
 </ul>
 <h4>Instructions</h4>
-FriendFinder
-    - .gitignore
-    - app
-      - data
-        - friends.js
-      - public
-        - home.html
-        - survey.html
-      - routing
-        - apiRoutes.js
-        - htmlRoutes.js
-    - node_modules
-    - package.json
-    - server.js
+<p>FriendFinder</p>
+   <ul>
+   <li> .gitignore</li>
+   <li> app </li>
+   <li> data </li>
+   <ul> <li> friends.js </li></ul>
+    <li> public<li>
+        <ul> <li> home.html </li>
+        <li> survey.html </li></ul>
+     <li> routing </li>
+       <ul> <li> apiRoutes.js</li>
+        <li> htmlRoutes.js </li></ul>
+    <li>  node_modules</li>
+    <li>  package.json</li>
+    <li>  server.js</li>
 
 <h4>Author</h4>
 <p>Nitya Kandukuri</p>
