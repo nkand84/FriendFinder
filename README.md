@@ -12,9 +12,9 @@
 </ul>
 <h4>Link to Deployed Site</h4>
 <a href="https://friendfinder-nk.herokuapp.com/">Friend Finder</a>
-<img src="app/public/assets/imgs/FF1.PNG" alt="Home Page">
+<img src="../app/public/assets/imgs/FF1.PNG" alt="Home Page">
 <br>
-<img src="app/public/assets/imgs/FF2.PNG" alt="Survey Page">
+<img src="../app/public/assets/imgs/FF2.PNG" alt="Survey Page">
 <hr>
 <h4>Author</h4>
 <p>Nitya Kandukuri</p>
