@@ -6,9 +6,11 @@ var app = express();
 app.use(express.static('app/public'));
 
 // =============================================================
-var htmlRoutes = require("./app/routing/htmlRoutes.js")(app);
 var friends = require("./app/data/friends.js")(app);
 var apiRoutes = require("./app/routing/apiRoutes.js")(app,friends);
+var htmlRoutes = require("./app/routing/htmlRoutes.js")(app);
+
+
 
 var PORT = process.env.PORT || 3000;
 
