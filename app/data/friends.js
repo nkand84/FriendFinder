@@ -69,5 +69,5 @@ module.exports = function (app) {
 
         
     ];
-    return friends;
+    return friends;   
 }
