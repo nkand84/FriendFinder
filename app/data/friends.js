@@ -24,7 +24,7 @@ module.exports = function (app) {
             "scores": [
                 1,
                 5,
-                6,
+                5,
                 4,
                 5,
                 1,

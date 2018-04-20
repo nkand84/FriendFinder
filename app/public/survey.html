@@ -177,7 +177,7 @@
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#results-modal" id="submit">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
 
@@ -221,35 +221,62 @@
 
         $("#submit").on("click", function (event) {
             event.preventDefault();
+            // Form validation
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
 
-            var newUser = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [
-                    parseInt($("#q1").val().trim()),
-                    parseInt($("#q2").val().trim()),
-                    parseInt($("#q3").val().trim()),
-                    parseInt($("#q4").val().trim()),
-                    parseInt($("#q5").val().trim()),
-                    parseInt($("#q6").val().trim()),
-                    parseInt($("#q7").val().trim()),
-                    parseInt($("#q8").val().trim()),
-                    parseInt($("#q9").val().trim()),
-                    parseInt($("#q10").val().trim())
-                ]
+                $(".chosen-select").each(function () {
 
-            };
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+            // If all required fields are filled
+            if (validateForm()) {
+                var newUser = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        parseInt($("#q1").val().trim()),
+                        parseInt($("#q2").val().trim()),
+                        parseInt($("#q3").val().trim()),
+                        parseInt($("#q4").val().trim()),
+                        parseInt($("#q5").val().trim()),
+                        parseInt($("#q6").val().trim()),
+                        parseInt($("#q7").val().trim()),
+                        parseInt($("#q8").val().trim()),
+                        parseInt($("#q9").val().trim()),
+                        parseInt($("#q10").val().trim())
+                    ]
 
-            // Question: What does this code do??
-            $.post("/api/friends", newUser, function (data) {
-                console.log("I am data " + data.friendMatch + "," + data.friendPhoto);
-                // alert("Adding a friend...");
-                $("#match-name").text(data.friendMatch);
-                $("#match-img").attr("src", data.friendPhoto);
-            });
+                };
+                $("#submit").attr("data-target", "#results-modal");
+                // Question: What does this code do??
+                $.post("/api/friends", newUser, function (data) {
+                    console.log("I am data " + data.friendMatch + "," + data.friendPhoto);
+                    // alert("Adding a friend...");
+                    $("#match-name").text(data.friendMatch);
+                    $("#match-img").attr("src", data.friendPhoto);
+                   
+                   
+                });
+            }
 
+            else {
+                alert("Please fill out all fields before submitting!");
+                // $("#results-modal").attr()
+                $("#submit").attr("data-target", "");
+            }
             emptyFields();
         });
+
         //  empty fields after submitting
         function emptyFields() {
             $("#name").val("");
