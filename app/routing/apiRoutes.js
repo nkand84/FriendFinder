@@ -1,11 +1,9 @@
 
 var path = require("path");
-var bodyParser = require("body-parser");
+
 module.exports = function (app, friends) {
     // Sets up the Express app to handle data parsing
-    // =============================================================
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(bodyParser.json());
+    
     
     // Displays all friends
     app.get("/api/friends", function (req, res) {

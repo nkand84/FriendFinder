@@ -2,9 +2,12 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
+var bodyParser = require("body-parser");
 var app = express();
 app.use(express.static('app/public'));
-
+// =============================================================
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // =============================================================
 var friends = require("./app/data/friends.js")(app);
 var apiRoutes = require("./app/routing/apiRoutes.js")(app,friends);
